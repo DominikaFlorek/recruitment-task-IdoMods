@@ -689,7 +689,7 @@ a:focus {
 }
 
 .small_box-background {
-	background-image: url(/img/Vector-1.svg);
+	background-image: url('./img/Vector-1.svg');
 	background-repeat: no-repeat;
 	height: 800px;
 	background-position: 95% 50%;
@@ -699,7 +699,7 @@ a:focus {
 	height: 800px;
 	object-fit: cover;
 	width: 100%;
-	background-image: url('/img/Vector.svg');
+	background-image: url('./img/Vector.svg');
 	background-repeat: no-repeat;
 	background-position: 0% 80%;
 
@@ -781,8 +781,8 @@ a:focus {
 	object-fit: contain;
 
 	background-repeat: no-repeat;
-	background-image: url(/img/mops.png), url(/img/Vector-mops1.svg),
-		url(/img/Vector-mops2.svg);
+	background-image: url('./img/mops.png'), url('./img/Vector-mops1.svg'),
+		url('./img/Vector-mops2.svg');
 	background-position: center, 33% 90%, 75% 80%;
 	background-attachment: fixed;
 }
