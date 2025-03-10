@@ -11,6 +11,7 @@ Projekt jest zadaniem rekrutacyjnym polegającym na odwzorowaniu gotowej strony 
 * Po kliknięciu w produkt wyświetleniu popup z informacją o produkcie
 * Efekt parallax (obraz z psem, przed sekcją z produktami)
 * ScrollSpy
+* W projekcie powinna być wykorzystana czcionka Futura PT, ale ze względu na płatną licencję, została zastąpiona darmową czcionką Roboto
 
 ## Technologie
 * HTML
