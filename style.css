@@ -1,0 +1,919 @@
+:root {
+	--text-color-black: #111111;
+	--text-color-white: #f6f6f6;
+	--background-red: #ad4844;
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	scroll-behavior: smooth;
+}
+
+body {
+	max-width: 1600px;
+	margin: auto;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 30px 0px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color: var(--text-color-white);
+	z-index: 10;
+
+	@media only screen and (max-width: 768px) {
+		box-shadow: none;
+	}
+}
+
+.header_info {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-self: center;
+
+	@media only screen and (min-width: 769px) and (max-width: 1100px) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 30px;
+	}
+}
+
+.logo {
+	@media only screen and (max-width: 768px) {
+		margin-left: 30px;
+	}
+}
+
+header a {
+	cursor: pointer;
+}
+
+.active {
+	border-bottom: 1px solid var(--text-color-black);
+}
+
+header a:link,
+a:visited,
+a:active,
+a:focus {
+	text-decoration: none;
+	color: var(--text-color-black);
+}
+
+.links_info {
+	display: flex;
+	font-weight: 450;
+	align-items: center;
+	gap: 30px;
+	text-transform: uppercase;
+	color: var(--text-color-black);
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.link_products {
+	font-weight: 700;
+}
+
+/*------ burger btn -------- */
+.burgerBtn {
+	display: none;
+	position: fixed;
+	top: 20px;
+	right: 30px;
+	padding: 10px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	z-index: 1000;
+
+	@media only screen and (max-width: 768px) {
+		display: block;
+	}
+}
+
+.burgerBtn_box {
+	position: relative;
+	width: 24px;
+	height: 24px;
+}
+
+.burgerBtn_bars,
+.burgerBtn_bars::after,
+.burgerBtn_bars::before {
+	position: absolute;
+	right: 0;
+	content: '';
+	width: 100%;
+	height: 4px;
+	background-color: var(--background-red);
+}
+
+.burgerBtn_bars::after {
+	top: 8px;
+}
+.burgerBtn_bars::before {
+	top: 16px;
+}
+
+/* burger nav */
+
+.hidden {
+	display: none;
+}
+
+.burgerList {
+	height: 100vh;
+	margin: 10px 20px;
+}
+
+.burgerList_box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	gap: 20px;
+	background-color: var(--background-red);
+
+	backdrop-filter: blur(3px);
+}
+
+.burgerList_box li {
+	list-style: none;
+}
+
+.burgerList_box a {
+	font-size: 13px;
+	font-weight: 450;
+	color: #d8d8d8;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.burgerList_box a:hover {
+	border-bottom: 1px solid #d8d8d8;
+}
+
+/* arthrohard */
+
+.arthrohard {
+	margin: 60px 60px;
+	position: relative;
+}
+
+.background_grey {
+	position: absolute;
+	z-index: -10;
+}
+
+.background_grey1 {
+	top: 40%;
+	left: -60px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.background_grey2 {
+	top: 20%;
+	right: -60px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.background_grey3 {
+	top: 35%;
+	right: -60px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.arthrohard_part1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 30px;
+	gap: 0 30px;
+
+	@media only screen and (max-width: 768px) {
+		margin: 30px 0;
+		gap: 0;
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+.photo_products {
+	padding: 20px;
+}
+
+.photo_products img {
+	height: 600px;
+	width: 100%;
+	object-fit: cover;
+	@media only screen and (max-width: 1300px) {
+		height: 400px;
+		overflow: visible;
+	}
+}
+
+.product_info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.arthrohard_heading {
+	font-size: 84px;
+	font-weight: 450;
+	text-transform: uppercase;
+	@media only screen and (max-width: 1300px) {
+		font-size: 54px;
+	}
+
+	@media only screen and (max-width: 992px) {
+		font-size: 42px;
+	}
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.arthrohard_heading span {
+	color: #ab303c;
+}
+
+.arthrohard_aboutproduct h2 {
+	margin: 20px 0;
+	font-size: 32px;
+	font-weight: 450;
+	background: linear-gradient(90.01deg, #111111 -8.85%, #b1b1b1 116.12%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	@media only screen and (max-width: 1300px) {
+		font-size: 26px;
+	}
+
+	@media only screen and (max-width: 992px) {
+		font-size: 20px;
+	}
+}
+
+.arthrohard_aboutproduct p {
+	color: var(--text-color-black);
+	font-style: 20px;
+	font-weight: 400;
+
+	@media only screen and (max-width: 992px) {
+		line-height: 1.4;
+		font-size: 13px;
+		margin-top: 40px;
+	}
+}
+
+.arthrohard_aboutproduct button {
+	margin: 20px 0;
+	padding: 10px 40px;
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--text-color-white);
+	background-color: #30ab4c;
+	border: none;
+	cursor: pointer;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+/* arthrohard part2 co wyróżnia preparat */
+
+.arthrohard_part2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.arthrohard_part2 h2 {
+	margin-top: 100px;
+	padding: 40px 0;
+	position: relative;
+	font-weight: 450;
+	font-size: 40px;
+	background: linear-gradient(
+		90.01deg,
+		#111111 -8.85%,
+		#b1b1b1 58.84%,
+		#696969 91.39%,
+		#b1b1b1 116.12%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	@media only screen and (max-width: 1300px) {
+		margin: 60px 0 0;
+		font-size: 30px;
+	}
+
+	@media only screen and (max-width: 992px) {
+		font-size: 26px;
+		margin: 20px 0 20px;
+	}
+
+	@media only screen and (max-width: 768px) {
+		font-size: 24px;
+	}
+}
+
+.arthrohard_part2 h2::after {
+	background-color: var(--text-color-black);
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 1px;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, 0);
+	width: 126px;
+}
+
+.arthrohard_box {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-self: center;
+	margin: 30px;
+
+	@media only screen and (max-width: 1400px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	@media only screen and (max-width: 768px) {
+		margin: 10px;
+	}
+}
+
+.arthrohard_productAdvantage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.arthrohard_productAdvantage h3 {
+	font-style: 31px;
+	font-weight: 450;
+	position: relative;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+
+	@media only screen and (max-width: 768px) {
+		margin-bottom: 10px;
+	}
+}
+
+.arthrohard_productAdvantage h3::after {
+	background-color: var(--text-color-black);
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 1px;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, 0);
+	width: 126px;
+}
+
+.arthrohard_list {
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: baseline;
+}
+
+.arthrohard_productAdvantage p {
+	font-size: 16px;
+	font-weight: 400;
+	padding: 20px;
+}
+
+.circle_number {
+	font-weight: 700;
+	font-size: 20px;
+	width: 46px;
+	height: 46px;
+	border: 50%;
+	border-radius: 42px;
+	padding: 10px 17px;
+	margin: 10px;
+	box-shadow: 0px 1px 9px 0px #00000040;
+	text-align: center;
+}
+
+.span_bold {
+	font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+
+.photo_box {
+	display: flex;
+	margin-top: 60px;
+	padding-bottom: 10px;
+	position: relative;
+
+	@media only screen and (max-width: 768px) {
+		margin-top: 0;
+		margin-bottom: 60px;
+	}
+}
+
+.photo-background {
+	position: absolute;
+	z-index: -10;
+}
+
+.photo-background4 {
+	top: 90px;
+	left: -70px;
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.photo-background5 {
+	top: 50px;
+	right: -60px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.photo-background6 {
+	bottom: 10px;
+	left: -65px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.photo-background7 {
+	bottom: 10px;
+	right: -20px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.photo-background8 {
+	top: 20px;
+	left: -75px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.photo-background9 {
+	bottom: 30px;
+	right: -30px;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
+}
+
+.photo_box-dogs {
+	gap: 20px;
+}
+
+.photo_box:hover::after,
+.photo_box-dogs:hover::after {
+	position: absolute;
+	background-color: #111111;
+	bottom: 0;
+	content: '';
+	height: 1px;
+	width: 100%;
+}
+
+.photo_box img {
+	border-radius: 8px;
+	object-fit: cover;
+
+	@media only screen and (max-width: 768px) {
+		border-radius: 0;
+	}
+}
+
+.photo_img {
+	width: 340px;
+	height: 294px;
+	border-radius: 8px;
+}
+
+.photo_dog {
+	height: 294px;
+	width: 170px;
+}
+
+/* action */
+
+.action {
+	padding-top: 100px;
+	margin: 0 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media only screen and (min-width: 768px) {
+		display: none;
+	}
+}
+
+.action h2 {
+	margin-bottom: 30px;
+}
+
+.action_list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.action_list_box {
+	padding: 10px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	gap: 30px;
+}
+
+.action_list_box p {
+	width: 70%;
+}
+
+.action_number {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	padding: 5px;
+	width: 46px;
+	height: 46px;
+	border: 50%;
+	border-radius: 42px;
+	font-weight: 900;
+	font-size: 20px;
+	box-shadow: 0px 1px 9px 0px #999;
+}
+
+/* skład w 5ml */
+
+.ingredients {
+	margin: 60px 60px 0;
+	padding: 30px 30px 0;
+	text-align: center;
+
+	@media only screen and (max-width: 768px) {
+		margin: 0 20px;
+	}
+}
+
+.ingredients h2 {
+	margin: 120px 60px 80px;
+	padding-bottom: 20px;
+	position: relative;
+	font-weight: 450;
+	font-size: 40px;
+	background: linear-gradient(
+		90.01deg,
+		#111111 -8.85%,
+		#b1b1b1 58.84%,
+		#696969 91.39%,
+		#b1b1b1 116.12%
+	);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.ingredients h2::after {
+	background-color: var(--text-color-black);
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 1px;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, 0);
+	width: 126px;
+}
+
+.ingredients h3 {
+	margin: 20px;
+}
+
+.ingredients_large_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media only screen and (max-width: 1200px) {
+		gap: 50px;
+	}
+
+	@media only screen and (max-width: 768px) {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.ingredients_small_box {
+	width: 30%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media only screen and (max-width: 1200px) {
+		width: 100%;
+	}
+}
+
+.ingredients_small_box-back {
+	width: 40%;
+
+	@media only screen and (max-width: 1200px) {
+		width: 0;
+	}
+
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+	}
+}
+
+.small_box-background {
+	background-image: url(/img/Vector-1.svg);
+	background-repeat: no-repeat;
+	height: 800px;
+	background-position: 95% 50%;
+}
+
+.ingredients_small_box img {
+	height: 800px;
+	object-fit: cover;
+	width: 100%;
+	background-image: url('/img/Vector.svg');
+	background-repeat: no-repeat;
+	background-position: 0% 80%;
+
+	@media only screen and (max-width: 768px) {
+		height: 600px;
+	}
+}
+
+.ingredients_small_box button {
+	padding: 10px 40px;
+	background-color: var(--background-red);
+	color: var(--text-color-white);
+	border: none;
+	font-size: 18px;
+	font-weight: 700;
+	cursor: pointer;
+
+	@media only screen and (max-width: 1200px) {
+		display: none;
+		padding: 10px;
+	}
+}
+
+.ingredients_small_box-back {
+	@media only screen and (min-width: 768px) and (max-width: 1200px) {
+		display: none;
+	}
+
+	@media only screen and (max-width: 768px) {
+		order: 3;
+	}
+}
+
+.ingredient {
+	padding: 20px;
+	height: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	align-items: center;
+	position: relative;
+	@media only screen and (max-width: 1200px) {
+		width: 100%;
+		margin: 20px;
+	}
+}
+
+.ingredient:hover h3:first-of-type:after {
+	background-color: var(--text-color-black);
+	margin-top: 10px;
+	content: '';
+	display: block;
+	height: 1px;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, 0);
+	width: 50%;
+}
+
+.circle {
+	width: 70px;
+	height: 70px;
+}
+
+.circle img {
+	width: 80%;
+	height: 80%;
+	object-fit: contain;
+}
+
+.ingredient p {
+	margin: 10px 0;
+}
+
+/* photo mops */
+
+.photo_mops {
+	height: 496px;
+	object-fit: contain;
+
+	background-repeat: no-repeat;
+	background-image: url(/img/mops.png), url(/img/Vector-mops1.svg),
+		url(/img/Vector-mops2.svg);
+	background-position: center, 33% 90%, 75% 80%;
+	background-attachment: fixed;
+}
+
+/* wybór produktów */
+
+.products_selection {
+	padding: 20px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	background-color: rgba(246, 246, 246, 1);
+}
+
+.products_selection_box {
+	margin: 130px 0;
+	width: max-content;
+	border: 1px solid var(--background-red);
+	margin-bottom: 100px;
+
+	@media only screen and (max-width: 768px) {
+		margin: 60px;
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.products_selection_box label {
+	padding: 10px;
+	font-weight: 450;
+	font-size: 20;
+}
+
+.products_selection_box select {
+	/* appearance: none; */
+	padding: 10px 40px;
+	font-weight: 700;
+	border: none;
+	background-color: var(--background-red);
+	color: var(--text-color-white);
+	outline: none;
+	text-align: center;
+}
+
+.products_box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.products_box img {
+	margin: 20px;
+	width: 300px;
+	height: 280px;
+	object-fit: cover;
+	cursor: pointer;
+
+	@media only screen and (max-width: 768px) {
+		margin: 10px;
+		width: 150px;
+	}
+}
+
+/* pop-up */
+
+.show-popup {
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 1.75rem 3.5rem;
+	margin: 5rem 2rem;
+	border: none;
+	background-color: #fff;
+	color: #444;
+	border-radius: 10rem;
+	cursor: pointer;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 40%;
+	background-color: white;
+	height: 200px;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+	z-index: 10;
+	font-size: 24px;
+	font-weight: 450;
+}
+
+.popup_heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.close-popup {
+	font-size: 28px;
+	padding: 5px;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.popup_info {
+	display: flex;
+	margin: 30px 0;
+	flex-direction: column;
+	align-items: start;
+}
+
+.popup_info p {
+	margin-bottom: 40px;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(3px);
+	z-index: 5;
+}
